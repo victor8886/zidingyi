@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/in_out</item>
+    </style>
+
+    <style name="in_out" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/out</item>
     </style>
 
 </resources>

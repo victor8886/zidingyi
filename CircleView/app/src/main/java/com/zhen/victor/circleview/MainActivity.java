@@ -4,6 +4,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
@@ -12,6 +14,13 @@ import android.widget.RemoteViews;
 public class MainActivity extends AppCompatActivity {
 
     private CircleView viewById;
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            startActivity(new Intent(MainActivity.this,Second.class));
+            overridePendingTransition(R.anim.enter,R.anim.out);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         animation.setDuration(10000);
         animation.setRepeatCount(3);
         viewById.setAnimation(animation);
+        handler.sendEmptyMessageDelayed(0, 3000);
         showNote();
     }
 
