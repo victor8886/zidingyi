@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewById = (CircleView) findViewById(R.id.circle);
+        Roate3dAnimation animation = new Roate3dAnimation(0.0f, 360.0f, 360f, 60f, -50f, true);
+        animation.setDuration(10000);
+        animation.setRepeatCount(3);
+        viewById.setAnimation(animation);
         showNote();
     }
 
